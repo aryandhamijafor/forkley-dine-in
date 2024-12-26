@@ -1,0 +1,22 @@
+name: Firebase Deploy
+
+on:
+  push:
+    branches:
+      - master  # Change to the branch you want to deploy from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Ubuntu environment for GitHub Actions
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checkout the code from the repository
+
+      - name: Setup Firebase CLI
+        uses: wzieba/Firebase-Action@v2  # GitHub Action to deploy to Firebase
+        with:
+          firebase_token: ${{ secrets.FIREBASE_AUTH_TOKEN }}  # Firebase Token as secret
+
+      - name: Deploy to Firebase
+        run: firebase deploy --only hosting  # Deploy only Firebase Hosting
