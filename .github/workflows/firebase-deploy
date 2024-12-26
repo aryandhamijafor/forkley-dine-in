@@ -16,7 +16,7 @@ jobs:
       - name: Setup Firebase CLI
         uses: wzieba/Firebase-Action@v2  # GitHub Action to deploy to Firebase
         with:
-          firebase_token: ${{ secrets.FIREBASE_AUTH_TOKEN }}  # Firebase Token as secret
+          4/0AanRRrsNPmw7D7lJ_6kloQ2kfLK8U-Kzum8an40t3sWr9OlcZVwAnVbgvAT0T6cF720sdg: ${{ secrets.FIREBASE_AUTH_TOKEN }}  # Firebase Token as secret
 
       - name: Deploy to Firebase
         run: firebase deploy --only hosting  # Deploy only Firebase Hosting
