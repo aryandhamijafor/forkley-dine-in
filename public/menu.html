@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Forkley Dine-In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .menu-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    .menu-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+    }
+    .cart-btn {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart-btn:hover {
+      background-color: #0056b3;
+    }
+    .checkout-link {
+      display: block;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .checkout-link:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <h1>Menu</h1>
+    <div id="menu-items">
+      <!-- Menu items will be dynamically added here -->
+    </div>
+    <a href="checkout.html" class="checkout-link">Go to Checkout</a>
+  </div>
+  <script>
+    const menuItems = [
+      { name: "Burger", price: 10, image: "https://via.placeholder.com/50" },
+      { name: "Pizza", price: 12, image: "https://via.placeholder.com/50" },
+      { name: "Fries", price: 5, image: "https://via.placeholder.com/50" },
+      { name: "Coke", price: 3, image: "https://via.placeholder.com/50" },
+      { name: "Ice Cream", price: 6, image: "https://via.placeholder.com/50" },
+    ];
+
+    const menuContainer = document.getElementById("menu-items");
+
+    menuItems.forEach((item) => {
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "menu-item";
+      itemDiv.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <div>
+          <h3>${item.name}</h3>
+          <p>$${item.price.toFixed(2)}</p>
+        </div>
+        <button class="cart-btn" onclick="addToCart('${item.name}', ${item.price})">Add to Cart</button>
+      `;
+      menuContainer.appendChild(itemDiv);
+    });
+
+    function addToCart(name, price) {
+      alert(`${name} added to cart!`);
+      // Here you can save the cart items in localStorage or Firebase
+    }
+  </script>
+</body>
+</html>
