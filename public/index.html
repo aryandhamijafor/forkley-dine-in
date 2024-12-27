@@ -4,13 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forkley Dine-In</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .qr-text {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Forkley Dine-In</h1>
-  <p>Scan the QR code below to view our menu!</p>
-  <div id="qr-code">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://<your-firebase-project-id>.web.app/menu.html" alt="QR Code">
+  <div class="container">
+    <h1>Welcome to Forkley Dine-In</h1>
+    <p>Scan the QR code to view the menu and place your order!</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://forkley-dine-in.web.app/menu.html" alt="QR Code">
+    <p class="qr-text">Or click <a href="https://forkley-dine-in.web.app/menu.html">here</a> to access the menu directly.</p>
   </div>
 </body>
 </html>
